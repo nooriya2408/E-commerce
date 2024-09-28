@@ -14,7 +14,7 @@ setFormdata({...formData,[e.target.name]:e.target.value})
   const login = async ()=>{
 console.log("login, ",formData)
 let responseData;
-await fetch("http://localhost:4000/login",{
+await fetch("https://e-commerce-omep.onrender.com/login",{
 method:"POST",
 headers:{
   Accept:"application/form-data",
@@ -35,7 +35,7 @@ else{
   const signup = async()=>{
 console.log("signup",formData)
 let responseData;
-await fetch("http://localhost:4000/signup",{
+await fetch("https://e-commerce-omep.onrender.com/signup",{
 method:"POST",
 headers:{
   Accept:"application/form-data",

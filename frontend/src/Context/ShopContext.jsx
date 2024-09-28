@@ -15,12 +15,12 @@ const ShopContextProvider = (props)=>{
     //console.log(cartItems,"cartitems")
 
     useEffect(()=>{
-        fetch("http://localhost:4000/allproducts")
+        fetch("https://e-commerce-omep.onrender.com/allproducts")
         .then((res)=>res.json())
         .then((data)=>setAll_product(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch("http://localhost:4000/getcart",{
+            fetch("https://e-commerce-omep.onrender.com/getcart",{
                 method:"POST",
                 headers:{
                     Accept:"appliication/form-data",
@@ -37,7 +37,7 @@ const ShopContextProvider = (props)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         //console.log(cartItems);
         if(localStorage.getItem('auth-token')){
-             fetch("http://localhost:4000/addtocart",{
+             fetch("https://e-commerce-omep.onrender.com/addtocart",{
                 method:"POST",
                 headers:{
                     Accept:'application/form-data',
@@ -67,7 +67,7 @@ const ShopContextProvider = (props)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-
             1}));
             if(localStorage.getItem('auth-token')){
-                fetch("http://localhost:4000/removefromcart",{
+                fetch("hhttps://e-commerce-omep.onrender.com/removefromcart",{
                     method:"POST",
                     headers:{
                         Accept:'application/form-data',
